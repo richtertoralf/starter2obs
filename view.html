@@ -1,13 +1,24 @@
 <!DOCTYPE html>
 <html lang="de">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Starter2OBS</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles_view.css">
 </head>
 
 <body>
+<?php
+session_start();
+// Überprüft, ob der Benutzer eingeloggt ist
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    // Wenn der Benutzer nicht eingeloggt ist, wird er zur Anmeldeseite weitergeleitet
+    header("Location: index.php");
+    exit();
+}
+?>
+
     <main>
         <section>
             <p id="aktuelleUhrzeit" class="movable"></p>
@@ -26,4 +37,5 @@
     <script src="js/starterAnzeige.js"></script>
     <script src="js/move.js"></script>
 </body>
+
 </html>
