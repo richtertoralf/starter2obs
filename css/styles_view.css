@@ -1,9 +1,14 @@
+/* ===============================
+   Hauptstruktur und Grundlayout
+=============================== */
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: rgba(255, 255, 255, 0);
     width: 100%;
     height: 100vh;
     margin: 0;
+    position: relative;
 }
 
 main {
@@ -11,6 +16,46 @@ main {
     top: 0;
     left: 0;
 }
+
+/* ===============================
+   Elemente zum Upload der Startliste
+=============================== */
+
+/* Gemeinsame CSS für die Upload-Bereiche */
+.upload-section {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Stil für den Upload-Bereich */
+#upload {
+    background-color: #333;
+    z-index: 800;
+}
+
+/* Stil für den user-info Bereich nach dem Upload */
+#user-info {
+    top: 100px;
+    right: 30px;
+    background-color: #565555;
+    font-size: 16px;
+    z-index: 900;
+}
+
+/* Klasse für das Ausblenden des user-info Bereichs*/
+.hide {
+    display: none;
+}
+
+
+/* ===============================
+   Uhrzeit
+=============================== */
 
 #aktuelleUhrzeit {
     position: absolute;
@@ -25,6 +70,10 @@ main {
     padding-left: 5px;
     cursor: pointer;
 }
+
+/* ===============================
+   Starter-Elemente
+=============================== */
 
 #starter {
     background-color: rgba(255, 255, 255, 0);
@@ -42,6 +91,10 @@ main {
     padding-left: 5px;
     cursor: pointer;
 }
+
+/* ===============================
+   Starter-Details
+=============================== */
 
 .starter-style {
     position: absolute;
