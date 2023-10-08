@@ -1,10 +1,10 @@
->Tool um Daten aus Winlaufen mit OBS-Studio zu nutzen - Starter anzeigen
+>Tool um Daten aus Winlaufen mit OBS-Studio zu nutzen - Starter anzeigen  
 >Diese Webanwendung kann als Browserquelle direkt in OBS-Studio eingebunden werden.
 
 # Projektname: Starter2OBS
 
 ## Beschreibung:
-Starter2OBS ist ein Open-Source-Webanwendungsprojekt, das zur Verwaltung und Anzeige von Starterdaten für Sportveranstaltungen entwickelt wurde. Die Anwendung ermöglicht die einfache Authentifizierung von Benutzern, das Hochladen von Starterlisten im CSV-Format und die Anzeige von Starterinformationen in Echtzeit.
+Starter2OBS ist ein Webanwendungsprojekt, das zur Verwaltung und Anzeige von Starterdaten für Skisportveranstaltungen entwickelt wurde. Die Anwendung ermöglicht die einfache Authentifizierung von Benutzern, das Hochladen von Starterlisten im CSV-Format und die Anzeige von Starterinformationen in Echtzeit.
 
 ## Funktionen:
 
