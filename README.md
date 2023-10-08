@@ -1,34 +1,53 @@
-# starter2obs
-Tool um Daten aus Winlaufen mit OBS-Studio zu nutzen - Starter anzeigen
+>Tool um Daten aus Winlaufen mit OBS-Studio zu nutzen - Starter anzeigen
+>Diese Webanwendung kann als Browserquelle direkt in OBS-Studio eingebunden werden.
+
+# Projektname: Starter2OBS
 
 ## Beschreibung:
-Starter2OBS ist eine Webanwendung, die für die Darstellung von Startinformationen in Echtzeit entwickelt wurde. Die Anwendung liest Startdaten aus einer CSV-Datei aus und zeigt sie dynamisch auf einer Webseite an. Dieses Projekt ist besonders für den Einsatz in Sportveranstaltungen geeignet, wo Echtzeitinformationen über Starter benötigt werden.
+Starter2OBS ist ein Open-Source-Webanwendungsprojekt, das zur Verwaltung und Anzeige von Starterdaten für Sportveranstaltungen entwickelt wurde. Die Anwendung ermöglicht die einfache Authentifizierung von Benutzern, das Hochladen von Starterlisten im CSV-Format und die Anzeige von Starterinformationen in Echtzeit.
 
-## Funktionalitäten:
+## Funktionen:
 
-### Benutzerauthentifizierung
-Die Anwendung erfordert eine Benutzeranmeldung. Unangemeldete Benutzer werden auf die Anmeldeseite weitergeleitet.
-### Echtzeitaktualisierung
-Die Anwendung aktualisiert die Startinformationen alle 5 Sekunden, um die neuesten Daten anzuzeigen.
-Dynamische Datendarstellung: Die Startnummer, Startzeit, Vorname, Nachname, Verein, Verband und Nationalität des aktuellen Starters werden dynamisch auf der Webseite angezeigt.
-### CSV-Datenverarbeitung
-Die Anwendung verwendet eine CSV-Datei mit Starterinformationen, die einmalig beim Laden der Webseite in den Browser über einen XMLHttpRequest geladen und verarbeitet werden.
+### Anmeldung und Benutzerauthentifizierung:
+Die Anwendung bietet eine Anmeldeseite, auf der Benutzer ihre Anmeldeinformationen eingeben können. Die Benutzerauthentifizierung erfolgt anhand von Benutzername und Passwort, die in einer Konfigurationsdatei (config.json) gespeichert sind.
 
-### Verwendete Technologien
-- Frontend: HTML, CSS, JavaScript
-- Backend: PHP (für Benutzerauthentifizierung)
-- Datenverarbeitung: JavaScript für das Parsen und Verarbeiten von CSV-Daten
-- Datenquelle: CSV-Datei mit Starterinformationen
+### Hochladen von Starterlisten:
+Benutzer können CSV-Dateien hochladen, die Starterinformationen enthalten. Die Anwendung überprüft die Datei auf das richtige Format und die erforderlichen Spaltenköpfe.
 
-### Anleitung zur Verwendung
-Anmeldung: Benutzer müssen sich anmelden, um Zugang zur Startinformationsseite zu erhalten.
-Datenquelle: Stellen Sie sicher, dass die CSV-Datei (StartlisteEinzelstart.csv) im richtigen Format vorliegt und die erforderlichen Datenfelder enthält.
-Echtzeitaktualisierung: Die Startinformationen werden automatisch alle 5 Sekunden aktualisiert, um die neuesten Starterdaten anzuzeigen.
-Darstellung: Die aktuellen Starterinformationen, einschließlich Startnummer, Startzeit, Vorname, Nachname, Verein, Verband und Nationalität, werden auf der Webseite angezeigt.
-Hinweis: Dieses Projekt ist ein Beispiel für die Verarbeitung und Anzeige von Echtzeitdaten aus einer CSV-Datei und kann an spezifische Anforderungen angepasst werden. Es dient als Grundlage für die Entwicklung ähnlicher Anwendungen, die Echtzeitinformationen anzeigen müssen.
+### Echtzeit-Anzeige von Starterinformationen:
+Nach dem Hochladen einer Starterliste werden die Starterinformationen in Echtzeit angezeigt. Die Anwendung aktualisiert die Anzeige alle 5 Sekunden und zeigt die Starter an, die innerhalb den nächsten 10 Sekunden starten werden.
 
-Autor:
-Toralf Richter
+### Verschieben von Anzeigelementen:
+Die Anwendung ermöglicht es Benutzern, Anzeigeelemente auf der Benutzeroberfläche, auch in OBS-Studio, zu verschieben und die neuen Positionen anzuzeigen. Dies erleichtert die Anpassung der Anzeige an individuelle Bedürfnisse.
 
-Lizenz:
-noch offen
+## Technologien:
+
+PHP für die Backend-Logik
+HTML, CSS und JavaScript für die Benutzeroberfläche und die Anzeige von Starterinformationen
+CSV-Dateien für die Speicherung der Starterdaten
+XMLHttpRequest für die Aktualisierung der Anzeige in Echtzeit
+PHP-Session-Management für die Benutzerauthentifizierung und die Speicherung von Benachrichtigungen
+
+## Verwendung:
+- Klone das Repository auf deinem lokalen Computer oder einem Server in der Cloud
+- Konfiguriere die Anmeldedaten (Benutzer und Passwort) in der config.json-Datei.
+- Starte die Anwendung auf einem Webserver, der PHP unterstützt.
+- Binde die Webanwendung als Browserquelle in OBS-Studio ein
+- Melden dich an, um die Starterdaten hochzuladen und anzuzeigen. Das geht in OBS über den Button "interagieren".
+
+>Hinweis: Stelle sicher, dass alle erforderlichen Abhängigkeiten und Webserverkonfigurationen gemäß den Anforderungen der verwendeten Technologien installiert und durchgeführt sind.
+
+## dringend abzuändern
+Die Benutzer und Passwortdaten in der Datei config.json sind zu hashen und die Datei ist z.B. nach /etc/starter2obs zu verschieben.
+
+## sinnvolle Erweiterungen
+- Doppelstart implementieren
+- individueller Start, ohne Zeit, z. B. wie beim Skispringen implementieren
+
+## optionale Ereiterungen
+- die nächsten 10 Starter in einem Fenster laufend anzeigen
+
+
+
+
+
