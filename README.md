@@ -33,12 +33,14 @@ PHP-Session-Management für die Benutzerauthentifizierung und die Speicherung vo
 - Konfiguriere die Anmeldedaten (Benutzer und Passwort) in der config.json-Datei.
 - Starte die Anwendung auf einem Webserver, der PHP unterstützt.
 - Binde die Webanwendung als Browserquelle in OBS-Studio ein
-- Melden dich an, um die Starterdaten hochzuladen und anzuzeigen. Das geht in OBS über den Button "interagieren".
+- Melde dich an, um die Starterdaten hochzuladen und anzuzeigen. Das geht in OBS über den Button "interagieren".
 
 >Hinweis: Stelle sicher, dass alle erforderlichen Abhängigkeiten und Webserverkonfigurationen gemäß den Anforderungen der verwendeten Technologien installiert und durchgeführt sind.
 
 ## dringend abzuändern
-Die Benutzer und Passwortdaten in der Datei config.json sind zu hashen und die Datei ist z.B. nach /etc/starter2obs zu verschieben.
+- Die Benutzer und Passwortdaten in der Datei config.json sind zu hashen
+- die Datei ist z.B. nach /etc/starter2obs zu verschieben.
+- cloud-init für die schnelle Installation auf einem vServer z.B. Hetzner erstellen
 
 ## sinnvolle Erweiterungen
 - Doppelstart implementieren
