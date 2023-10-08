@@ -1,6 +1,6 @@
 // Lade die CSV-Datei mit einem XMLHttpRequest
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'csv/StartlisteEinzelstart.csv', true);
+xhr.open('GET', 'uploads/Startliste.csv', true);
 xhr.onreadystatechange = function () {
     if (xhr.readyState === 4 && xhr.status === 200) {
         var csvData = xhr.responseText;
