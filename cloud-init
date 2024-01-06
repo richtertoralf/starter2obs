@@ -1,0 +1,43 @@
+#cloud-config
+package_upgrade: true
+packages:
+  - nginx
+  - php-fpm
+  - git
+
+write_files:
+  - path: /etc/nginx/sites-available/starter2obs.conf
+    permissions: '0644'
+    content: |
+      server {
+          listen 80;
+          server_name _;
+          root /var/www/html/starter2obs;
+          index index.php index.html index.htm;
+          location / {
+              try_files $uri $uri/ =404;
+          }
+          location ~ \.php$ {
+              include snippets/fastcgi-php.conf;
+              fastcgi_pass unix:/var/run/php/php-fpm.sock;
+          }
+          location ~ /\.ht {
+              deny all;
+          }
+      }
+
+runcmd:
+  - PHP_VERSION=$(php -r "echo PHP_MAJOR_VERSION.'.'.PHP_MINOR_VERSION;")
+  - sed -i "s|fastcgi_pass unix:/var/run/php/php-fpm.sock;|fastcgi_pass unix:/var/run/php/php${PHP_VERSION}-fpm.sock;|" /etc/nginx/sites-available/starter2obs.conf
+  - rm /etc/nginx/sites-enabled/default
+  - ln -s /etc/nginx/sites-available/sport-registration.conf /etc/nginx/sites-enabled/
+  - systemctl restart nginx
+  - systemctl restart php${PHP_VERSION}-fpm
+  - cd /var/www/html
+  - git clone https://github.com/richtertoralf/starter2obs/
+  - cd /var/www/html/starter2obs
+  - # chmod -R 644 /var/www/html/
+  - # find /var/www/html/ -type d -exec chmod 755 {} \;
+  - chown -R www-data:www-data /var/www/html/
+  - chmod -R 775 /var/www/html
+  
